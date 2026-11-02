@@ -1,0 +1,81 @@
+{
+  "name": "quiz-studio",
+  "version": "1.6.0",
+  "private": true,
+  "description": "Quiz Studio — quizzes, classroom projector, rooms and the swarm server.",
+  "scripts": {
+    "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js -c jest.db.config.js --runInBand",
+    "quiz:e2e": "node scripts/quiz-e2e.mjs",
+    "quiz:audit": "node scripts/quiz-release-audit.mjs --root .",
+    "quiz:audit:post160": "node scripts/post160-static-audit.mjs --root .",
+    "quiz:test:e2e": "playwright test -c tests/e2e/playwright.quiz.config.ts",
+    "quiz:test:db": "jest -c jest.db.config.js --runInBand lib/quiz/__tests__",
+    "swarm:dev": "tsx swarm-server/dev.ts",
+    "swarm:build": "esbuild swarm-server/index.ts --bundle --platform=node --target=node22 --format=esm --external:pg-native --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\" --outfile=swarm-server/dist/server.mjs",
+    "swarm:balance": "tsx tools/swarm/balance.ts",
+    "test:swarm": "jest lib/swarm app/api/quiz/swarm",
+    "swarm:e2e": "playwright test -c tests/e2e/playwright.quiz.config.ts swarm-survival --project=chromium-desktop --project=chromium-mobile"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@sentry/nextjs": "^11.0.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0",
+    "@types/qrcode": "^1.5.6",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.8.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.4.3",
+    "next": "^16.3.6",
+    "ogl": "^1.0.11",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.0",
+    "ws": "^8.22.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
+    "@next/bundle-analyzer": "^16.3.6",
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.2",
+    "cross-env": "^10.1.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.6",
+    "husky": "^9.1.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}
