@@ -1,5 +1,5 @@
 // Next.js 16 proxy (formerly "middleware"). Refreshes the Supabase auth cookie for quiz pages and quiz APIs ONLY,
-// so every other Evolution Sandbox route is completely unaffected.
+// so every other route is completely unaffected.
 import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 

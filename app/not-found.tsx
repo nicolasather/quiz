@@ -8,11 +8,9 @@ export default function NotFound() {
       lead="This address does not lead anywhere — which, in a project about dead ends, is at least on theme."
     >
       <section>
-        <p>Three places that do exist:</p>
+        <p>The one place that does exist:</p>
         <ul>
-          <li><DocLink href="/">The sandbox</DocLink> — four raw materials and 1,917 things to find.</li>
-          <li><DocLink href="/method">How this was built</DocLink> — sourcing rules and graph validation.</li>
-          <li><DocLink href="/faq">Questions</DocLink> — including how far this can be trusted as history.</li>
+          <li><DocLink href="/">Quiz Studio</DocLink> — write a quiz and host it live.</li>
         </ul>
       </section>
     </StaticPage>

@@ -35,7 +35,7 @@ export function StaticPage({
       <div className="mx-auto max-w-[820px] px-[clamp(20px,5vw,40px)] pb-20">
         <header className="border-b border-line pt-[clamp(40px,7vw,86px)] pb-[30px]">
           <LineHoverLink href="/" variant="slide" className="mono mb-[38px] text-bone-3 hover:text-ochre">
-            ← Evolution Sandbox
+            ← Quiz Studio
           </LineHoverLink>
           <p className="mono mt-0 mb-3 text-bone-4">{eyebrow}</p>
           <h1 className="mt-0 mb-[18px] font-display text-[clamp(34px,6vw,62px)] leading-[1.02] font-normal tracking-[-0.01em] text-balance text-bone">
@@ -47,7 +47,7 @@ export function StaticPage({
         <main className={PROSE}>{children}</main>
 
         <footer className="mono flex flex-wrap justify-between gap-[18px] pt-7 text-bone-4">
-          <span>© {YEAR} Evolution Sandbox</span>
+          <span>© {YEAR} Quiz Studio</span>
           <nav className="flex gap-[18px]" aria-label="Pages">
             <LineHoverLink href="/method" variant="slide" className="hover:text-ochre">Method</LineHoverLink>
             <LineHoverLink href="/faq" variant="slide" className="hover:text-ochre">FAQ</LineHoverLink>

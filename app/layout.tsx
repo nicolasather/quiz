@@ -38,7 +38,7 @@ const fredoka = Fredoka({
 
 const SITE = siteUrl();
 const DESCRIPTION =
-  'Start with a stone, a stick, a bone and a length of fibre. Combine them into 1,917 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
+  'Quiz Studio: write a quiz, host it live for a class or a group, and see who knows what.';
 
 /* Developer Beta build (never true in production — see lib/dev/env.ts). It must not feed the
    production analytics, and it must not be indexed. */
@@ -48,29 +48,25 @@ const GA_ID = DEV_BUILD ? undefined : process.env.NEXT_PUBLIC_GA_ID;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: 'Evolution Sandbox',
-    template: '%s · Evolution Sandbox',
+    default: 'Quiz Studio',
+    template: '%s · Quiz Studio',
   },
   description: DESCRIPTION,
-  applicationName: 'Evolution Sandbox',
-  keywords: [
-    'human evolution', 'history of technology', 'discovery graph',
-    'explorable explanation', 'interactive museum', 'science communication',
-  ],
-  authors: [{ name: 'Evolution Sandbox' }],
+  applicationName: 'Quiz Studio',
+  keywords: ['quiz', 'live quiz', 'classroom quiz', 'quiz studio'],
+  authors: [{ name: 'Quiz Studio' }],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    siteName: 'Evolution Sandbox',
-    title: 'Evolution Sandbox',
-    description:
-      'How did we get here? Combine four raw materials into 1,917 discoveries, from a knapped stone to a virtual world.',
+    siteName: 'Quiz Studio',
+    title: 'Quiz Studio',
+    description: DESCRIPTION,
     url: SITE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Evolution Sandbox',
-    description: 'Combine four raw materials into 1,917 discoveries, from a knapped stone to a virtual world.',
+    title: 'Quiz Studio',
+    description: DESCRIPTION,
   },
   robots: DEV_BUILD ? { index: false, follow: false } : { index: true, follow: true },
 };
@@ -90,7 +86,7 @@ export const viewport: Viewport = {
 const WEBSITE_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Evolution Sandbox',
+  name: 'Quiz Studio',
   url: SITE,
   description: DESCRIPTION,
 };
