@@ -13,7 +13,6 @@ import { isGuest, maybeUser } from '@/lib/quiz/supabase';
 import { quizConfigured } from '@/lib/quiz/config';
 
 export const metadata: Metadata = {
-  title: { default: 'Quiz Studio', template: '%s · Quiz Studio' },
   description: 'Create quizzes with five question formats, then play them solo, on a classroom projector, or online with a room code.',
 };
 export const dynamic = 'force-dynamic';

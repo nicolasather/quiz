@@ -49,10 +49,7 @@ export function StaticPage({
         <footer className="mono flex flex-wrap justify-between gap-[18px] pt-7 text-bone-4">
           <span>© {YEAR} Quiz Studio</span>
           <nav className="flex gap-[18px]" aria-label="Pages">
-            <LineHoverLink href="/method" variant="slide" className="hover:text-ochre">Method</LineHoverLink>
-            <LineHoverLink href="/faq" variant="slide" className="hover:text-ochre">FAQ</LineHoverLink>
-            <LineHoverLink href="/privacy" variant="slide" className="hover:text-ochre">Privacy</LineHoverLink>
-            <LineHoverLink href="/terms" variant="slide" className="hover:text-ochre">Terms</LineHoverLink>
+            <LineHoverLink href="/quiz" variant="slide" className="hover:text-ochre">Quizzes</LineHoverLink>
           </nav>
         </footer>
       </div>
