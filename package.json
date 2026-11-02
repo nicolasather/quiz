@@ -4,6 +4,11 @@
   "private": true,
   "description": "Quiz Studio — quizzes, classroom projector, rooms and the swarm server.",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js -c jest.db.config.js --runInBand",
     "quiz:e2e": "node scripts/quiz-e2e.mjs",
     "quiz:audit": "node scripts/quiz-release-audit.mjs --root .",
